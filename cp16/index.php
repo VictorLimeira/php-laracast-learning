@@ -1,8 +1,8 @@
 <?php
 
-require 'bootstrap.php';
-require 'Task.php';
+require 'core/bootstrap.php';
 
-$tasks = $query->queryAll('todos', 'Task');
-
-require 'index.view.php';
+$routes = new Router;
+require 'routes.php';
+$uri = trim($_SERVER['REQUEST_URI'],'/');
+require $routes->direct($uri);
