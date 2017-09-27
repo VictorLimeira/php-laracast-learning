@@ -1,0 +1,12 @@
+
+
+
+
+Detelar branch local e remoto.
+
+        // locally ((if you know what you are doing!)
+        git branch -d localBranchName
+
+        // and then if you need to...
+        // on remote
+        git push origin :remoteBranchName
