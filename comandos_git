@@ -1,4 +1,8 @@
+Criar branch e mandar para o remoto
 
+        git checkout -b <branch>
+
+        git push -u origin <branch>
 
 
 
