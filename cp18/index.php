@@ -22,4 +22,8 @@ $posts = [
     new Post('Title four', false)
 ];
 
-var_dump($posts);
+$unpublishedPosts = array_filter($posts, function($post){
+    return !$post->published;
+});
+
+var_dump($unpublishedPosts);
