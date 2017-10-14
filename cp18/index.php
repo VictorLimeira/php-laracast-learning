@@ -22,8 +22,18 @@ $posts = [
     new Post('Title four', false)
 ];
 
-$unpublishedPosts = array_filter($posts, function($post){
-    return !$post->published;
-});
+// $unpublishedPosts = array_filter($posts, function($post){
+//     return !$post->published;
+// });
+//
+// var_dump($unpublishedPosts);
 
-var_dump($unpublishedPosts);
+// $modified = array_map(function($post){
+//     return 'foo';
+// }, $posts);
+//
+// var_dump($modified);
+
+$titles = array_column($posts, 'title');
+
+var_dump($titles);
