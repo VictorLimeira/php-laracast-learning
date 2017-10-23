@@ -16,7 +16,10 @@ class Router
 
   function direct($uri)
   {
-    #TODO
+
+    # filter url
+    $uri = parse_url($uri, PHP_URL_PATH);
+
     if (array_key_exists($uri, $this->routes)) {
       return $this->routes[$uri];
     } else {
