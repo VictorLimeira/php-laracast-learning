@@ -1,0 +1,1 @@
+Use basic structure to receive user data from a form and process it to the database.

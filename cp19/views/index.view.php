@@ -3,7 +3,7 @@
 
         <h1>Submit your name</h1>
 
-        <form class="" action="/names" method="GET">
+        <form class="" action="/names" method="POST">
           <input type="text" name="name" value=""></input>
 
           <button type="submit">Submit</button>

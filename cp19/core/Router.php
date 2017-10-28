@@ -6,22 +6,32 @@
 class Router
 {
 
-  protected $routes = [];
+  public $routes = [
+      'GET' => [],
+      'POST' => []
+  ];
 
-  function define($routes)
+  public static function load($file)
   {
-    # code...
-    $this->routes = $routes;
+      $router = new static;
+      require $file;
+      return $router;
   }
 
-  function direct($uri)
+    function get($uri, $controller)
+    {
+        $this->routes['GET'][$uri] = $controller;
+    }
+
+    function post($uri, $controller)
+    {
+        $this->routes['POST'][$uri] = $controller;
+    }
+
+  function direct($uri, $methodType)
   {
-
-    # filter url
-    $uri = parse_url($uri, PHP_URL_PATH);
-
-    if (array_key_exists($uri, $this->routes)) {
-      return $this->routes[$uri];
+    if (array_key_exists($uri, $this->routes[$methodType])) {
+      return $this->routes[$methodType][$uri];
     } else {
       throw new Exception("Error Processing Request for uri.", 1);
 
