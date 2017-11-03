@@ -6,6 +6,7 @@ require 'core/Request.php';
 require 'core/functions.php';
 require 'core/database/Connection.php';
 require 'core/database/QueryBuilder.php';
+require 'Task.php';
 
 
-//$query = new QueryBuilder(Connection::make($config['database']));
+$query = new QueryBuilder(Connection::make($config['database']));

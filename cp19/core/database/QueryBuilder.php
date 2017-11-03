@@ -19,4 +19,20 @@ class QueryBuilder
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_CLASS, $into_class);
     }
+
+    public function addTask($table_name, $description)
+    {
+        try{
+            $completed = 0;
+
+            $statement = $this->pdo->prepare("INSERT INTO {$table_name} (description, completed) values (:description, :completed)");
+            $statement->bindParam(':description', $description);
+            $statement->bindParam(':completed', $completed);
+            $statement->execute();
+
+        }catch (PDOException $e)
+        {
+            echo $e->getMessage();
+        }
+    }
 }
