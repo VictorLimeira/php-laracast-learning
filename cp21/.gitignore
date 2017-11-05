@@ -1,0 +1,10 @@
+.idea
+
+#Some php and mac stuff ignored
+
+.DS_Store
+Thumbs.db
+npm-debug.log
+/bower_components
+/node_modules
+/vendor
