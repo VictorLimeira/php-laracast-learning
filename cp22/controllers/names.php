@@ -2,7 +2,7 @@
 
 if ($_POST['description'] != ''){
     $description = $_POST['description'];
-    $query->addTask('todos', $description);
+    App::get('database')->addTask('todos', $description);
 }
 
 header('Location: /');

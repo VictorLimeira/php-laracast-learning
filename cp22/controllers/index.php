@@ -1,5 +1,5 @@
 <?php
 
-$tasks = $query->queryAll('todos', 'Task');
+$tasks = App::get('database')->queryAll('todos', 'Task');
 
 require 'views/index.view.php';
